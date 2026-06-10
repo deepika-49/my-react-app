@@ -1,4 +1,3 @@
-import Navbar from "../Components2/Navbar";
 import Hero from "../Components2/Hero";
 import CakeSection from "../Components2/CakeSection";
 import About from "../Components2/About";
@@ -7,17 +6,16 @@ import Contact from "../Components2/Contact";
 import Footer from "../Components2/Footer";
 
 function Home() {
-    return (
-    <div>
-        <Navbar />
-        <Hero />
-        <CakeSection />
-        <About />
-        <Gallery />
-        <Contact />
-        <Footer />
-    </div>
-);
+  return (
+    <>
+      <Hero />
+      <CakeSection />
+      <About />
+      <Gallery />
+      <Contact />
+      <Footer />
+    </>
+  );
 }
 
 export default Home;

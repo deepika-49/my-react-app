@@ -1,66 +1,141 @@
+/* RESET (only once project lo use cheyyi) */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
+
+/* Navbar */
 .navbar{
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:18px 60px;
-    background:linear-gradient(
-        to right,
-        #ffecd2,
-        #fcb69f
-    );
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    background:linear-gradient(to right,#ffecd2,#fcb69f);
     position:sticky;
     top:0;
     z-index:1000;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
+
 .logo-section{
     display:flex;
     align-items:center;
     gap:10px;
+    cursor:pointer;
 }
+
 .logo-img{
     width:50px;
     height:50px;
     border-radius:50%;
 }
+
 .logo-text{
     font-size:30px;
     font-weight:bold;
     color:#5a2d0c;
 }
+
 .nav-links{
     display:flex;
+    align-items:center;
     list-style:none;
     gap:30px;
 }
+
 .nav-links li{
+    position:relative;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#5a2d0c;
     font-size:18px;
     font-weight:500;
-    cursor:pointer;
-    color:#5a2d0c;
     transition:0.3s;
 }
-.nav-links li:hover{
+
+.nav-links a:hover{
     color:white;
-    transform:scale(1.1);
 }
-@media (max-width:768px){
-    .navbar{
-        flex-direction:column;
-        padding:20px;
+
+/* Hamburger */
+.menu-icon{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+    color:#5a2d0c;
+}
+
+/* Dropdown */
+.dropdown{
+    position:relative;
+    cursor:pointer;
+}
+
+.dropdown-menu{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    min-width:180px;
+    background:white;
+    list-style:none;
+    border-radius:8px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    overflow:hidden;
+    z-index:9999;
+}
+
+.dropdown-menu.show{
+    display:block;
+}
+
+.dropdown-menu li{
+    padding:12px;
+}
+
+.dropdown-menu li a{
+    color:#5a2d0c;
+    display:block;
+}
+
+.dropdown-menu li:hover{
+    background:#fcb69f;
+}
+
+.dropdown-menu li:hover a{
+    color:white;
+}
+
+/* RESPONSIVE NAVBAR */
+@media(max-width:768px){
+
+    .menu-icon{
+        display:block;
     }
+
     .nav-links{
-        margin-top:15px;
+        display:none;
+        flex-direction:column;
+        width:100%;
+        background:white;
+        position:absolute;
+        top:70px;
+        left:0;
+        padding:15px;
         gap:15px;
-        flex-wrap:wrap;
-        justify-content:center;
     }
-    .logo-text{
-        font-size:24px;
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .dropdown-menu{
+        position:static;
+        width:100%;
+        background:#f8f8f8;
+        box-shadow:none;
     }
 }
